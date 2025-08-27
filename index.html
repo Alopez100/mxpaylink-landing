@@ -4,20 +4,104 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MXPaylink - Soluciones de Pago por WhatsApp</title>
-    <meta name="description" content="MXPaylink: Genera ligas de pago mediante comandos de texto en WhatsApp. Integración rápida y segura con Conekta.">
+    <meta name="description" content="MXPaylink: Genera ligas de pago mediante comandos de texto en WhatsApp. Integración rápida y segura con procesadores de pago.">
     <!-- Bootstrap CSS (Opcional, para estilo rápido) -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <style>
         /* Estilos CSS básicos */
-        body { font-family: Arial, sans-serif; line-height: 1.6; margin: 0; padding: 0; }
-        header { background: #007bff; color: white; padding: 1rem; text-align: center; }
-        main { padding: 2rem; max-width: 900px; margin: auto; }
-        section { margin-bottom: 2rem; }
-        footer { background: #f4f4f4; text-align: center; padding: 1rem; font-size: 0.9rem; }
-        h1, h2, h3 { color: #333; }
-        nav { background-color: #e9ecef; padding: 0.5rem; text-align: center; }
-        nav a { margin: 0 10px; text-decoration: none; color: #007bff; }
-        nav a:hover { text-decoration: underline; }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            /* Fondo sutil relacionado con tecnología/pagos */
+            background: linear-gradient(135deg, #f5f7fa 0%, #e4edf5 100%);
+            color: #333;
+        }
+        header {
+            background: linear-gradient(90deg, #007bff, #0056b3);
+            color: white;
+            padding: 2rem 1rem;
+            text-align: center;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        main {
+            padding: 2rem;
+            max-width: 1200px;
+            margin: 2rem auto;
+        }
+        section {
+            margin-bottom: 2rem;
+            padding: 1.5rem;
+            border-radius: 8px;
+            background-color: #ffffff;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            border-left: 5px solid #007bff;
+        }
+        footer {
+            background: #343a40;
+            color: #ffffff;
+            text-align: center;
+            padding: 1.5rem;
+            font-size: 0.9rem;
+            margin-top: 2rem;
+        }
+        h1, h2, h3 {
+            color: #007bff;
+        }
+        nav {
+            background-color: #e9ecef;
+            padding: 1rem;
+            text-align: center;
+            margin-bottom: 2rem;
+            border-radius: 5px;
+        }
+        nav a {
+            margin: 0 15px;
+            text-decoration: none;
+            color: #007bff;
+            font-weight: bold;
+            transition: color 0.3s ease;
+        }
+        nav a:hover {
+            text-decoration: underline;
+            color: #0056b3;
+        }
+        .hero-image {
+            /* Fondo relacionado con pagos/tecnología */
+            background-image: url('https://images.unsplash.com/photo-1600880292089-90a7e086ee0c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80');
+            background-size: cover;
+            background-position: center;
+            height: 400px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-align: center;
+            margin-bottom: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+        .hero-text {
+            background-color: rgba(0, 0, 0, 0.6);
+            padding: 2rem;
+            border-radius: 8px;
+            max-width: 80%;
+        }
+        .section-bg-servicios { background-color: #e3f2fd; border-left-color: #2196F3; }
+        .section-bg-contacto { background-color: #e8f5e9; border-left-color: #4CAF50; }
+        .section-bg-terminos { background-color: #fff3e0; border-left-color: #FF9800; }
+        .section-bg-privacidad { background-color: #fce4ec; border-left-color: #E91E63; }
+        .section-bg-devoluciones { background-color: #f3e5f5; border-left-color: #9C27B0; }
+
+        /* Estilos para listas de contactos */
+        .contact-category {
+            margin-bottom: 1rem;
+        }
+        .contact-category h4 {
+            color: #0056b3;
+            margin-bottom: 0.5rem;
+        }
     </style>
 </head>
 <body>
@@ -26,80 +110,106 @@
         <p>Pagos electrónicos, soluciones rápidas.</p>
     </header>
 
+    <div class="hero-image">
+        <div class="hero-text">
+            <h2>Soluciones de Pago Inteligentes</h2>
+            <p>Genera ligas de pago al instante directamente desde WhatsApp</p>
+        </div>
+    </div>
+
     <nav>
         <a href="#servicios">Servicios</a> |
         <a href="#contacto">Contacto</a> |
         <a href="#terminos">Términos</a> |
         <a href="#privacidad">Privacidad</a> |
-        <a href="#devolucion">Devolución</a>
+        <a href="#devoluciones">Devoluciones</a>
     </nav>
 
     <main>
         <!-- Sección de Servicios -->
-        <section id="servicios">
+        <section id="servicios" class="section-bg-servicios">
             <h2>Nuestros Servicios</h2>
             <p>MXPaylink es una plataforma innovadora que permite a negocios generar ligas de pago de forma instantánea directamente desde WhatsApp. Nuestra solución está diseñada para simplificar el proceso de cobro, haciendo que recibir pagos sea tan fácil como enviar un mensaje de texto.</p>
-            
+
             <h3>¿Cómo funciona?</h3>
             <ul>
-                <li><strong>Integración Simple:</strong> Conecta tu cuenta de Conekta y número de WhatsApp en minutos.</li>
+                <li><strong>Integración Simple:</strong> Conecta tu cuenta de procesador de pagos y número de WhatsApp en minutos.</li>
                 <li><strong>Cobros por Comando:</strong> Envía un mensaje como "Cobra $500 a Juan por clases impartidas" y genera una liga de pago al instante.</li>
                 <li><strong>Link de Pago Personalizado:</strong> Recibe un enlace único para compartir con tu cliente.</li>
                 <li><strong>Notificaciones Automáticas:</strong> Recibe confirmaciones de pago directamente en WhatsApp.</li>
                 <li><strong>Cobros en Mostrador:</strong> Genera enlaces de pago para compartir en persona o por redes sociales.</li>
             </ul>
-            
-            <p>MXPaylink está dirigido a autónomos, pequeños negocios y profesionales que buscan una forma rápida, segura y eficiente de cobrar sin necesidad de punto de venta físico o complejas integraciones.</p>
-            <!-- Nota: Puedes omitir precios si es bajo cotización -->
-            <p><em>*Los precios y planes se cotizan bajo demanda.</em></p>
+
+            <p>MXPaylink está dirigido a Micro Empresarios, Personas Físicas, Pequeños Negocios y Profesionales que buscan una forma rápida, segura y eficiente de cobrar sin necesidad de punto de venta físico o complejas integraciones.</p>
+
+            <p><em>*Envía un correo a <a href="mailto:ventas@mxpaylink.com">ventas@mxpaylink.com</a> para recibir una cotización de acuerdo a tus necesidades.</em></p>
         </section>
 
         <!-- Sección de Contacto -->
-        <section id="contacto">
+        <section id="contacto" class="section-bg-contacto">
             <h2>Contacto</h2>
             <p>Para más información o soporte, puedes contactarnos a través de los siguientes medios:</p>
-            <ul>
-                <li><strong>Correo Electrónico:</strong> contacto@mxpaylink.com</li>
-                <!-- <li><strong>Teléfono:</strong> +52 (XXX) XXX XXXX (Opcional)</li> -->
-                <!-- <li><strong>Redes Sociales:</strong> <a href="https://twitter.com/mxpaylink">Twitter</a>, <a href="https://www.linkedin.com/company/mxpaylink">LinkedIn</a> (Opcional)</li> -->
-            </ul>
+
+            <div class="contact-category">
+                <h4>Soporte y Consultas Generales</h4>
+                <ul>
+                    <li><a href="mailto:contacto@mxpaylink.com">contacto@mxpaylink.com</a></li>
+                    <li><a href="mailto:soporte@mxpaylink.com">soporte@mxpaylink.com</a></li>
+                    <li><a href="mailto:hola@mxpaylink.com">hola@mxpaylink.com</a></li>
+                </ul>
+            </div>
+
+            <div class="contact-category">
+                <h4>Asuntos Comerciales y Ventas</h4>
+                <ul>
+                    <li><a href="mailto:ventas@mxpaylink.com">ventas@mxpaylink.com</a></li>
+                </ul>
+            </div>
+
+            <div class="contact-category">
+                <h4>Asuntos Financieros</h4>
+                <ul>
+                    <li><a href="mailto:pagos@mxpaylink.com">pagos@mxpaylink.com</a></li>
+                    <li><a href="mailto:facturacion@mxpaylink.com">facturacion@mxpaylink.com</a></li>
+                </ul>
+            </div>
         </section>
 
         <!-- Términos y Condiciones -->
-        <section id="terminos">
+        <section id="terminos" class="section-bg-terminos">
             <h2>Términos y Condiciones</h2>
-            <p>Al acceder y utilizar el sitio web de MXPaylink, usted acepta cumplir con estos Términos y Condiciones. Si no está de acuerdo con alguna parte de los términos, no deberá utilizar nuestro sitio web.</p>
-            
+            <p>Al acceder y utilizar los servicios de MXPaylink, usted acepta cumplir con estos Términos y Condiciones. Si no está de acuerdo con alguna parte de los términos, no deberá utilizar nuestros servicios.</p>
+
             <h3>1. Uso del Servicio</h3>
             <p>MXPaylink proporciona una herramienta para facilitar la generación de ligas de pago a través de WhatsApp. El usuario es responsable de la información proporcionada y del uso correcto del servicio.</p>
-            
+
             <h3>2. Precios y Pagos</h3>
-            <p>Los precios del servicio se proporcionarán bajo cotización. Los pagos se procesan a través de Conekta. MXPaylink no almacena ni procesa directamente la información financiera del cliente.</p>
-            
+            <p>Los precios del servicio se proporcionarán bajo cotización. Los pagos se procesan a través del procesador de pagos con el cual el cliente tiene aperturada cuenta. MXPaylink no almacena ni procesa directamente la información financiera del cliente.</p>
+
             <h3>3. Disponibilidad del Servicio</h3>
             <p>Nos esforzamos por mantener el servicio disponible, pero no garantizamos su funcionamiento ininterrumpido. Nos reservamos el derecho de modificar, suspender o descontinuar el servicio en cualquier momento.</p>
-            
+
             <h3>4. Limitación de Responsabilidad</h3>
             <p>MXPaylink no será responsable por daños directos, indirectos, incidentales o consecuentes derivados del uso o la imposibilidad de uso del servicio.</p>
-            
+
             <h3>5. Cambios en los Términos</h3>
             <p>Nos reservamos el derecho de modificar estos términos en cualquier momento. Las modificaciones serán efectivas una vez publicadas en esta página.</p>
         </section>
 
         <!-- Aviso de Privacidad -->
-        <section id="privacidad">
+        <section id="privacidad" class="section-bg-privacidad">
             <h2>Aviso de Privacidad</h2>
             <p>MXPaylink se compromete a proteger la privacidad de sus usuarios. Este aviso describe cómo recopilamos, utilizamos y protegemos su información personal.</p>
-            
-            <h3>1. Información que Recopilamos</h3>
+
+            <h3>1. Datos que Utilizamos</h3>
             <ul>
                 <li><strong>Información de Registro:</strong> Nombre, correo electrónico, número de teléfono asociado a WhatsApp proporcionados durante el registro del servicio.</li>
-                <li><strong>Datos de Transacciones:</strong> Información relacionada con las ligas de pago generadas (montos, descripciones) y notificaciones de pago recibidas de Conekta. Esta información no incluye datos sensibles de tarjetas de crédito.</li>
-                <li><strong>Datos de Uso:</strong> Información sobre cómo interactúa con nuestro sitio web y servicio, como direcciones IP y tipo de navegador.</li>
+                <li><strong>Datos de Transacciones:</strong> Información relacionada con las ligas de pago generadas (montos, descripciones) y notificaciones de pago recibidas del procesador de pagos. Esta información no incluye datos sensibles de tarjetas de crédito.</li>
+                <li><strong>Datos de Interacción:</strong> Información sobre cómo interactúas con nuestro servicio a través de WhatsApp, como el contenido de los mensajes que envías para generar pagos.</li>
             </ul>
-            
-            <h3>2. Uso de la Información</h3>
-            <p>Utilizamos su información para:</p>
+
+            <h3>2. Uso de los Datos</h3>
+            <p>Utilizamos sus datos para:</p>
             <ul>
                 <li>Proporcionar y mantener el servicio.</li>
                 <li>Facilitar las transacciones de pago.</li>
@@ -107,48 +217,52 @@
                 <li>Mejorar y personalizar nuestra plataforma.</li>
                 <li>Cumplir con obligaciones legales.</li>
             </ul>
-            
+
             <h3>3. Compartir Información</h3>
             <p>Su información puede ser compartida con:</p>
             <ul>
-                <li><strong>Conekta:</strong> Para procesar las ligas de pago y recibir notificaciones de transacciones. MXPaylink no almacena credenciales de Conekta del usuario final.</li>
-                <li><strong>360Dialog:</strong> Para enviar y recibir mensajes de WhatsApp.</li>
+                <li><strong>El procesador de pagos con el cual el cliente tiene aperturada cuenta:</strong> Para procesar las ligas de pago y recibir notificaciones de transacciones. MXPaylink no almacena credenciales del procesador de pagos del usuario final.</li>
+                <li><strong>Proveedor de Servicios de Mensajería:</strong> Para enviar y recibir mensajes de WhatsApp.</li>
                 <li><strong>Autoridades Legales:</strong> Cuando sea requerido por ley.</li>
             </ul>
-            
+
             <h3>4. Seguridad de los Datos</h3>
             <p>Implementamos medidas de seguridad técnicas y organizativas para proteger su información personal contra acceso no autorizado, alteración, divulgación o destrucción.</p>
-            
+
             <h3>5. Derechos del Titular</h3>
             <p>Usted tiene derecho a acceder, rectificar, cancelar u oponerse al tratamiento de sus datos personales (Derechos ARCO). Para ejercer estos derechos, puede contactarnos a través de los medios proporcionados en la sección de Contacto.</p>
-            
+
             <h3>6. Cambios al Aviso de Privacidad</h3>
             <p>Podemos actualizar este aviso de privacidad. Cualquier cambio será notificado publicando el nuevo aviso en esta página.</p>
         </section>
 
-         <!-- Políticas de Devolución -->
-         <section id="devolucion">
-            <h2>Políticas de Devolución</h2>
-            <p>MXPaylink actúa como un facilitador para la generación de ligas de pago. Las transacciones financieras se procesan directamente entre el cliente del servicio (cobrador) y el usuario final (pagador) a través de Conekta.</p>
-            
+         <!-- Políticas de Devoluciones -->
+         <section id="devoluciones" class="section-bg-devoluciones">
+            <h2>Políticas de Devoluciones</h2>
+            <p>MXPaylink actúa como un facilitador para la generación de ligas de pago. Las transacciones financieras se procesan directamente entre el cliente del servicio (cobrador) y el usuario final (pagador) a través del procesador de pagos con el cual el cliente tiene aperturada cuenta.</p>
+
             <h3>1. Responsabilidad</h3>
             <p>MXPaylink no es responsable del procesamiento, aprobación o rechazo de los pagos realizados por los usuarios finales. Tampoco somos responsables de la entrega de bienes o servicios relacionados con el pago.</p>
-            
+
             <h3>2. Reembolsos</h3>
             <p>Las solicitudes de reembolso deben gestionarse directamente entre el cliente del servicio (cobrador) y el usuario final (pagador). MXPaylink no procesa reembolsos financieros.</p>
-            
+
             <h3>3. Errores en Cobros</h3>
             <p>Si se genera una liga de pago por error, el cliente del servicio es responsable de notificar al usuario final y, si aplica, gestionar cualquier ajuste directamente con él.</p>
-            
+
             <h3>4. Disputas</h3>
-            <p>Cualquier disputa relacionada con una transacción debe resolverse entre las partes involucradas (cliente del servicio y usuario final). MXPaylink no interviene en disputas de pago.</p>
+            <p>Cualquier disputa relacionada con una transacción debe resolverse entre las partes involucradas (cliente del servicio y usuario final). MXPaylink no interviene en disputas de pago. Al utilizar nuestros servicios, usted acepta que MXPaylink queda liberado de cualquier responsabilidad derivada de disputas entre el cliente del servicio y el usuario final.</p>
         </section>
 
     </main>
 
     <footer>
         <p>&copy; 2025 MXPaylink. Todos los derechos reservados.</p>
-        <p><a href="#terminos">Términos y Condiciones</a> | <a href="#privacidad">Aviso de Privacidad</a> | <a href="#devolucion">Políticas de Devolución</a></p>
+        <p>
+            <a href="#terminos">Términos y Condiciones</a> |
+            <a href="#privacidad">Aviso de Privacidad</a> |
+            <a href="#devoluciones">Políticas de Devoluciones</a>
+        </p>
     </footer>
 
     <!-- Bootstrap JS (Opcional) -->

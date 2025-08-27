@@ -14,17 +14,11 @@
             line-height: 1.6;
             margin: 0;
             padding: 0;
-            /* Fondo sutil relacionado con tecnología/pagos */
-            background: linear-gradient(135deg, #f5f7fa 0%, #e4edf5 100%);
+            /* Fondo sutil para todo el cuerpo */
+            background-color: #f8f9fa;
             color: #333;
         }
-        header {
-            background: linear-gradient(90deg, #007bff, #0056b3);
-            color: white;
-            padding: 2rem 1rem;
-            text-align: center;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-        }
+       
         main {
             padding: 2rem;
             max-width: 1200px;
@@ -32,88 +26,299 @@
         }
         section {
             margin-bottom: 2rem;
-            padding: 1.5rem;
-            border-radius: 8px;
+            padding: 2rem;
+            border-radius: 10px;
             background-color: #ffffff;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-            border-left: 5px solid #007bff;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+            /* Transición suave para efectos hover */
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        /* Efecto sutil al pasar el mouse */
+        section:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.12);
         }
         footer {
-            background: #343a40;
-            color: #ffffff;
+            background: #212529;
+            color: #f8f9fa;
             text-align: center;
-            padding: 1.5rem;
+            padding: 2rem;
             font-size: 0.9rem;
             margin-top: 2rem;
         }
         h1, h2, h3 {
-            color: #007bff;
+            /* Colores más formales */
+            color: #2c3e50;
+        }
+        h1 {
+            font-size: 3rem;
+            margin-bottom: 0.5rem;
+        }
+        h2 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            border-bottom: 2px solid #3498db;
+            padding-bottom: 0.5rem;
+            display: inline-block;
         }
         nav {
-            background-color: #e9ecef;
+            background-color: rgba(255, 255, 255, 0.9); /* Fondo blanco semitransparente */
             padding: 1rem;
             text-align: center;
             margin-bottom: 2rem;
             border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+            /* Fijar la barra de navegación en la parte superior al hacer scroll */
+            position: sticky;
+            top: 0;
+            z-index: 1000;
         }
         nav a {
             margin: 0 15px;
             text-decoration: none;
-            color: #007bff;
-            font-weight: bold;
+            /* Color formal para enlaces */
+            color: #2c3e50;
+            font-weight: 600;
             transition: color 0.3s ease;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
         }
         nav a:hover {
-            text-decoration: underline;
-            color: #0056b3;
+            /* Color de hover formal */
+            color: #3498db;
+            background-color: rgba(52, 152, 219, 0.1);
         }
         .hero-image {
-            /* Fondo relacionado con pagos/tecnología */
-            background-image: url('https://images.unsplash.com/photo-1600880292089-90a7e086ee0c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80');
+            /* Nueva imagen hero relacionada con pagos/tecnología */
+            background-image: url('https://images.unsplash.com/photo-1551836022-d5d88e9218df?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80');
             background-size: cover;
             background-position: center;
-            height: 400px;
+            height: 500px;
             display: flex;
-            align-items: center;
+            flex-direction: column;
             justify-content: center;
+            align-items: center;
             color: white;
             text-align: center;
             margin-bottom: 2rem;
-            border-radius: 8px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            border-radius: 10px;
+            box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+            position: relative;
+            overflow: hidden;
+        }
+        /* Capa oscura para mejorar el contraste del texto */
+        .hero-image::before {
+            content: '';
+            position: absolute;
+            top: 0; right: 0; bottom: 0; left: 0;
+            background: rgba(0, 0, 0, 0.4);
+            z-index: 1;
         }
         .hero-text {
-            background-color: rgba(0, 0, 0, 0.6);
+            /* Eliminamos el fondo semitransparente anterior */
             padding: 2rem;
-            border-radius: 8px;
+            z-index: 2; /* Asegura que el texto esté sobre la capa oscura */
             max-width: 80%;
         }
-        .section-bg-servicios { background-color: #e3f2fd; border-left-color: #2196F3; }
-        .section-bg-contacto { background-color: #e8f5e9; border-left-color: #4CAF50; }
-        .section-bg-terminos { background-color: #fff3e0; border-left-color: #FF9800; }
-        .section-bg-privacidad { background-color: #fce4ec; border-left-color: #E91E63; }
-        .section-bg-devoluciones { background-color: #f3e5f5; border-left-color: #9C27B0; }
+        .hero-text h1, .hero-text p {
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5); /* Sombra para mejor legibilidad */
+        }
+        .hero-text h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+        }
+        .hero-text p {
+            font-size: 1.5rem;
+        }
+
+        /* --- Estilos para las secciones con fondos diferentes --- */
+        /* Usamos pseudo-elementos ::before para aplicar fondos sutiles sin afectar el contenido */
+
+        #servicios {
+            background-color: #ffffff;
+            color: #2c3e50;
+            position: relative;
+            overflow: hidden;
+        }
+        #servicios::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            /* Imagen de fondo sutil para Servicios */
+            background-image: url('https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=30');
+            background-size: cover;
+            background-position: center;
+            opacity: 0.05; /* Muy baja opacidad para ser sutil */
+            z-index: 0;
+        }
+        #servicios > * {
+            position: relative;
+            z-index: 1;
+        }
+
+        #contacto {
+            background-color: #ffffff;
+            color: #2c3e50;
+            position: relative;
+            overflow: hidden;
+        }
+        #contacto::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            /* Imagen de fondo sutil para Contacto */
+            background-image: url('https://images.unsplash.com/photo-1516321318423-f06f85e504b3?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=30');
+            background-size: cover;
+            background-position: center;
+            opacity: 0.05;
+            z-index: 0;
+        }
+        #contacto > * {
+            position: relative;
+            z-index: 1;
+        }
+
+        #terminos {
+            background-color: #ffffff;
+            color: #2c3e50;
+            position: relative;
+            overflow: hidden;
+        }
+        #terminos::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            /* Imagen de fondo sutil para Términos */
+            background-image: url('https://images.unsplash.com/photo-1589829545856-d10d557cf95f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=30');
+            background-size: cover;
+            background-position: center;
+            opacity: 0.05;
+            z-index: 0;
+        }
+        #terminos > * {
+            position: relative;
+            z-index: 1;
+        }
+
+        #privacidad {
+            background-color: #ffffff;
+            color: #2c3e50;
+            position: relative;
+            overflow: hidden;
+        }
+        #privacidad::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            /* Imagen de fondo sutil para Privacidad */
+            background-image: url('https://images.unsplash.com/photo-156301727-7c193138e371?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=30');
+            background-size: cover;
+            background-position: center;
+            opacity: 0.05;
+            z-index: 0;
+        }
+        #privacidad > * {
+            position: relative;
+            z-index: 1;
+        }
+
+        #devoluciones {
+            background-color: #ffffff;
+            color: #2c3e50;
+            position: relative;
+            overflow: hidden;
+        }
+        #devoluciones::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            /* Imagen de fondo sutil para Devoluciones */
+            background-image: url('https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=30');
+            background-size: cover;
+            background-position: center;
+            opacity: 0.05;
+            z-index: 0;
+        }
+        #devoluciones > * {
+            position: relative;
+            z-index: 1;
+        }
 
         /* Estilos para listas de contactos */
         .contact-category {
-            margin-bottom: 1rem;
+            margin-bottom: 1.5rem;
+            padding: 1rem;
+            border-radius: 8px;
+            background-color: rgba(236, 240, 241, 0.5); /* Fondo muy claro */
         }
         .contact-category h4 {
-            color: #0056b3;
+            color: #3498db;
+            margin-bottom: 0.75rem;
+            font-size: 1.25rem;
+        }
+        .contact-category ul {
+            list-style-type: none;
+            padding-left: 0;
+        }
+        .contact-category li {
             margin-bottom: 0.5rem;
+        }
+        .contact-category a {
+            color: #2c3e50;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.2s ease;
+        }
+        .contact-category a:hover {
+            color: #3498db;
+            text-decoration: underline;
+        }
+
+        /* Botones o enlaces de acción */
+        .action-link {
+            display: inline-block;
+            margin-top: 1rem;
+            padding: 0.75rem 1.5rem;
+            background-color: #3498db;
+            color: white !important;
+            text-decoration: none !important;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+        .action-link:hover {
+            background-color: #2980b9;
+            transform: scale(1.05);
+            text-decoration: none;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero-text h1 {
+                font-size: 2.5rem;
+            }
+            .hero-text p {
+                font-size: 1.2rem;
+            }
+            h1 {
+                font-size: 2.5rem;
+            }
+            h2 {
+                font-size: 1.75rem;
+            }
+            nav a {
+                display: block;
+                margin: 0.5rem 0;
+            }
         }
     </style>
 </head>
 <body>
-    <header>
-        <h1>MXPaylink</h1>
-        <p>Pagos electrónicos, soluciones rápidas.</p>
-    </header>
-
+   
     <div class="hero-image">
         <div class="hero-text">
-            <h2>Soluciones de Pago Inteligentes</h2>
-            <p>Genera ligas de pago al instante directamente desde WhatsApp</p>
+            <h1>MXPaylink</h1>
+            <p>Pagos electrónicos, soluciones rápidas.</p>
         </div>
     </div>
 
@@ -127,7 +332,7 @@
 
     <main>
         <!-- Sección de Servicios -->
-        <section id="servicios" class="section-bg-servicios">
+        <section id="servicios">
             <h2>Nuestros Servicios</h2>
             <p>MXPaylink es una plataforma innovadora que permite a negocios generar ligas de pago de forma instantánea directamente desde WhatsApp. Nuestra solución está diseñada para simplificar el proceso de cobro, haciendo que recibir pagos sea tan fácil como enviar un mensaje de texto.</p>
 
@@ -146,7 +351,7 @@
         </section>
 
         <!-- Sección de Contacto -->
-        <section id="contacto" class="section-bg-contacto">
+        <section id="contacto">
             <h2>Contacto</h2>
             <p>Para más información o soporte, puedes contactarnos a través de los siguientes medios:</p>
 
@@ -176,7 +381,7 @@
         </section>
 
         <!-- Términos y Condiciones -->
-        <section id="terminos" class="section-bg-terminos">
+        <section id="terminos">
             <h2>Términos y Condiciones</h2>
             <p>Al acceder y utilizar los servicios de MXPaylink, usted acepta cumplir con estos Términos y Condiciones. Si no está de acuerdo con alguna parte de los términos, no deberá utilizar nuestros servicios.</p>
 
@@ -197,7 +402,7 @@
         </section>
 
         <!-- Aviso de Privacidad -->
-        <section id="privacidad" class="section-bg-privacidad">
+        <section id="privacidad">
             <h2>Aviso de Privacidad</h2>
             <p>MXPaylink se compromete a proteger la privacidad de sus usuarios. Este aviso describe cómo recopilamos, utilizamos y protegemos su información personal.</p>
 
@@ -205,11 +410,11 @@
             <ul>
                 <li><strong>Información de Registro:</strong> Nombre, correo electrónico, número de teléfono asociado a WhatsApp proporcionados durante el registro del servicio.</li>
                 <li><strong>Datos de Transacciones:</strong> Información relacionada con las ligas de pago generadas (montos, descripciones) y notificaciones de pago recibidas del procesador de pagos. Esta información no incluye datos sensibles de tarjetas de crédito.</li>
-                <li><strong>Datos de Interacción:</strong> Información sobre cómo interactúas con nuestro servicio a través de WhatsApp, como el contenido de los mensajes que envías para generar pagos.</li>
+                <li><strong>Datos de Uso:</strong> Información sobre cómo usted interactúa con nuestro servicio a través de WhatsApp, como el contenido de los mensajes que envía para generar pagos. <em>(Nota: La interacción con MXPaylink es únicamente mediante mensajes de WhatsApp. Esta página web es únicamente informativa y no recopila datos de uso de navegación).</em></li>
             </ul>
 
-            <h3>2. Uso de los Datos</h3>
-            <p>Utilizamos sus datos para:</p>
+            <h3>2. Uso de la Información</h3>
+            <p><strong>Usamos su información para:</strong></p>
             <ul>
                 <li>Proporcionar y mantener el servicio.</li>
                 <li>Facilitar las transacciones de pago.</li>
@@ -219,7 +424,7 @@
             </ul>
 
             <h3>3. Compartir Información</h3>
-            <p>Su información puede ser compartida con:</p>
+            <p><strong>Compartimos su información con:</strong></p>
             <ul>
                 <li><strong>El procesador de pagos con el cual el cliente tiene aperturada cuenta:</strong> Para procesar las ligas de pago y recibir notificaciones de transacciones. MXPaylink no almacena credenciales del procesador de pagos del usuario final.</li>
                 <li><strong>Proveedor de Servicios de Mensajería:</strong> Para enviar y recibir mensajes de WhatsApp.</li>
@@ -237,7 +442,7 @@
         </section>
 
          <!-- Políticas de Devoluciones -->
-         <section id="devoluciones" class="section-bg-devoluciones">
+         <section id="devoluciones">
             <h2>Políticas de Devoluciones</h2>
             <p>MXPaylink actúa como un facilitador para la generación de ligas de pago. Las transacciones financieras se procesan directamente entre el cliente del servicio (cobrador) y el usuario final (pagador) a través del procesador de pagos con el cual el cliente tiene aperturada cuenta.</p>
 
